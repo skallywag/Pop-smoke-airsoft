@@ -4,15 +4,15 @@ import Image from "../image/Image";
 import { FiShare } from "react-icons/fi";
 
 interface EventCardProps {
-  imageUrl?: string;
-  time?: string;
-  date?: string;
-  title?: string;
-  subTitle?: string;
-  shareLink?: string;
-  attendees?: number;
-  eventType?: string;
-  duration?: number;
+  imageUrl: string;
+  time: string;
+  date: string;
+  title: string;
+  subTitle: string;
+  shareLink: string;
+  attendees: number;
+  eventType: string;
+  duration: number;
 }
 
 const EventCard: React.FC<EventCardProps> = (props) => {
@@ -35,7 +35,7 @@ const EventCard: React.FC<EventCardProps> = (props) => {
               style={{
                 marginBottom: "5px",
                 fontSize: "16px",
-                color: "lightgreen",
+                color: "#0b6a0b",
               }}
             >
               {props.title}
