@@ -3,9 +3,10 @@ import "./Image.scss";
 
 interface ImageProps {
   imageUrl?: string;
-  height?: string;
-  width: string;
-  radius: string;
+  height?: string | number;
+  width?: string | number;
+  radius: string | number;
+  marginBottom?: string | number;
 }
 
 const Image: React.FC<ImageProps> = (props) => {
@@ -18,6 +19,7 @@ const Image: React.FC<ImageProps> = (props) => {
           width: props.width,
           objectFit: "cover",
           borderRadius: props.radius,
+          marginBottom: props.marginBottom,
         }}
       />
     </div>

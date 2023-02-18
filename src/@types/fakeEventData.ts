@@ -56,7 +56,7 @@ export let fakeEventData = [
     eventType: "casual",
   },
   {
-    id: 4,
+    id: 5,
     imageUrl:
       "https://www.petplate.com/wp-content/uploads/2021/03/AdobeStock_236757188.jpeg",
     time: "4:30",
@@ -70,7 +70,7 @@ export let fakeEventData = [
     eventType: "casual",
   },
   {
-    id: 4,
+    id: 6,
     imageUrl:
       "https://www.petplate.com/wp-content/uploads/2021/03/AdobeStock_236757188.jpeg",
     time: "4:30",
@@ -84,7 +84,7 @@ export let fakeEventData = [
     eventType: "casual",
   },
   {
-    id: 4,
+    id: 7,
     imageUrl:
       "https://www.petplate.com/wp-content/uploads/2021/03/AdobeStock_236757188.jpeg",
     time: "4:30",

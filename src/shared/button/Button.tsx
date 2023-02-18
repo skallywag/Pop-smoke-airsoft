@@ -1,14 +1,16 @@
-import React from "react";
+import React, { Children, useState } from "react";
+import { GoChevronDown, GoChevronUp } from "react-icons/go";
 import "./Button.scss";
 
 interface ButtonProps {
   variant: string;
   text: string;
-  onClick: () => void;
+  icon?: JSX.Element | JSX.Element[];
   type: "button" | "submit" | "reset" | undefined;
+  onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ variant, text, onClick, type }) => {
+const Button: React.FC<ButtonProps> = ({ variant, text, type, onClick }) => {
   return (
     <button type={type} onClick={onClick} className={"default-btn " + variant}>
       {text}

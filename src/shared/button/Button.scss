@@ -50,11 +50,16 @@
   justify-content: center;
   align-items: center;
   padding: 10px 18px;
-  min-width: 160px;
+  min-width: 120px;
   height: 36px;
   border-style: none;
   color: white;
   border-radius: 20px;
+
+  &.icon {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .buttonEdit {
