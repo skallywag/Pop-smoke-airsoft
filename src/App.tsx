@@ -6,7 +6,7 @@ import "./App.scss";
 
 export default function App() {
   return (
-    <div style={{ height: "100vh" }}>
+    <div className="app" style={{ height: "100vh" }}>
       <NavBar />
       <RouterProvider router={router} />
     </div>

@@ -1,0 +1,74 @@
+@import "../../themes/variables";
+
+.buttonDefault {
+  border: 2px solid black;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  border-style: none;
+  color: $secondary;
+  font-style: normal;
+  &:hover {
+    cursor: pointer;
+    background-color: lightgray;
+    transition: ease-in-out 0.3s;
+  }
+}
+
+.buttonCancel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 18px;
+  background-color: #ffffff;
+  color: lightblue;
+  width: 138px;
+  height: 36px;
+  border: 2px solid lightblue;
+  box-sizing: border-box;
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.buttonSmall {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 18px;
+  border: 2px solid lightblue;
+  width: 138px;
+  height: 36px;
+}
+
+.buttonLarge {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 18px;
+  width: 226px;
+  height: 36px;
+}
+
+.buttonEdit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 8px;
+  width: 62px;
+  height: 36px;
+}
+
+.buttonDelete {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 8px;
+  width: 92px;
+  height: 36px;
+}
