@@ -153,4 +153,14 @@ table {
   top: 0;
   bottom: 0;
   z-index: 100;
+  animation: fadein 0.5s;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }

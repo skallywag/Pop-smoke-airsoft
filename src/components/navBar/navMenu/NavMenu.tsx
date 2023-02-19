@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
 import { router } from "../../../router";
 import "./NavMenu.scss";
 
 interface NavMenuProps {
   setShowNavMenu: (showNavMenu: boolean) => void;
+  showNavMenu: boolean;
 }
 
 const NavMenu: React.FC<NavMenuProps> = (props) => {
   return (
-    <div className="navMenu">
+    <div className={`navMenu ${props.showNavMenu ? "show" : "hide"}`}>
       <div
         className="navLink"
         onClick={() => {

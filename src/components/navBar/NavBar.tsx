@@ -57,7 +57,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             />
           )}
         </div>
-        {showNavMenu ? <NavMenu setShowNavMenu={setShowNavMenu} /> : null}
+        <NavMenu showNavMenu={showNavMenu} setShowNavMenu={setShowNavMenu} />
       </div>
     </div>
   );

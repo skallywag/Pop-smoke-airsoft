@@ -11,7 +11,7 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
   const { closeModal } = useModals();
 
   return (
-    <div className="overlay">
+    <div className="overlay" onClick={() => closeModal("LOG_IN")}>
       <div className="loginModal">
         <IoCloseOutline
           size={40}
