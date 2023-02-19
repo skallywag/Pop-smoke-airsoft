@@ -7,14 +7,14 @@ import logo from "../../assets/target.png";
 import NavMenu from "./navMenu/NavMenu";
 import Avatar from "../avatar/Avatar";
 import Button from "../../shared/button/Button";
-import { router } from "../../router";
+import themes from "../../themes/themes.scss?export";
 import { useModals } from "react-modal-controller";
 
 interface NavBarProps {}
 
 const NavBar: React.FC<NavBarProps> = (props) => {
   const [showNavMenu, setShowNavMenu] = useState<boolean>(false);
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
   const { openModal } = useModals();
 
   return (
@@ -23,7 +23,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         {showNavMenu ? (
           <CgCloseO
             size={34}
-            color={"whitesmoke"}
+            color={"white"}
             onClick={() => setShowNavMenu(!showNavMenu)}
           />
         ) : (
@@ -36,7 +36,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
 
         <div style={{ display: "flex", gap: "30px", alignItems: "center" }}>
           <img src={logo} height="30px" width={"30px"} className="logo" />
-          <div style={{ fontSize: "20px", color: "whitesmoke" }}>Pop Smoke</div>
+          <div style={{ fontSize: "20px", color: themes.white }}>Pop Smoke</div>
 
           <div className="linkContainer">
             <div className="navLink">About</div>

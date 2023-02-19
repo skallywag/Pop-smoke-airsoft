@@ -1,11 +1,3 @@
-$primary: #444c4f;
-$secondary: #081430;
-$gray: #495053b0;
-$white: #f5f5f5;
-// These variables are mostly for making auto complete better
-
-$appBarHeight: --appBarHeight;
-
 /* Font Weights */
 $fwThin: 100;
 $fwExtraThin: 200;
@@ -18,26 +10,14 @@ $fwExtraBold: 800;
 $fwBlack: 900;
 $fwExtraBlack: 950;
 
-/* Global's used in calculations (page offsets, etc) */
-$menuExpandedWidth: 250px;
-$menuCollapsedWidth: 50px;
-
 // Map SCSS theme variables to CSS variables
 
 //Primary, Secondary
-$primaryPink50: --primaryPink50;
-$primaryPink100: --primaryPink100;
-$primaryPink300: --primaryPink300;
-$primaryPink500: --primaryPink500;
-$primaryPink700: --primaryPink700;
-$primaryPink900: --primaryPink900;
-
-$secondaryRed50: --secondaryRed50;
-$secondaryRed100: --secondaryRed100;
-$secondaryRed300: --secondaryRed300;
-$secondaryRed500: --secondaryRed500;
-$secondaryRed700: --secondaryRed700;
-$secondaryRed900: --secondaryRed900;
+$primaryGray: --primaryGray;
+$secondayGray: --secondaryGray;
+$darkGray: --darkGray;
+$primaryGreen: --primaryGreen;
+$white: --white;
 
 //Neutral
 $neutralWhite: --neutralWhite;
@@ -52,19 +32,6 @@ $neutralGrey700: --neutralGrey700;
 $neutralGrey800: --neutralGrey800;
 $neutralGrey900: --neutralGrey900;
 $neutralBlack: --neutralBlack;
-
-//Product
-$productPinkDark: --productPinkDark;
-$productOrange: --productOrange;
-$productOrangeLight: --productOrangeLight;
-$productYellow: --productYellow;
-$productGreen: --productGreen;
-$productGreenDark: --productGreenDark;
-$productTeal: --productTeal;
-$productTealLight: --productTealLight;
-$productPurpleLight: --productPurpleLight;
-$productPurple: --productPurple;
-$productPurpleDark: --productPurpleDark;
 
 //Accent
 $accentSuccessLight: --accentSuccessLight;

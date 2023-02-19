@@ -1,7 +1,9 @@
+@import "src/themes/themes";
+
 .filterBar {
   width: 100%;
   padding: 10px 0;
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid $primaryGreen;
   .filterWindow {
     width: 100%;
     display: flex;

@@ -10,7 +10,7 @@ const NavMenu: React.FC<NavMenuProps> = (props) => {
   return (
     <div className={`navMenu ${props.showNavMenu ? "show" : "hide"}`}>
       <div
-        className="navLink"
+        className="menuItem"
         onClick={() => {
           router.navigate("/");
           props.setShowNavMenu(false);
@@ -20,7 +20,7 @@ const NavMenu: React.FC<NavMenuProps> = (props) => {
       </div>
 
       <div
-        className="navLink"
+        className="menuItem"
         onClick={() => {
           router.navigate("/about");
           props.setShowNavMenu(false);
@@ -30,7 +30,7 @@ const NavMenu: React.FC<NavMenuProps> = (props) => {
       </div>
 
       <div
-        className="navLink"
+        className="menuItem"
         onClick={() => {
           router.navigate("/forums");
           props.setShowNavMenu(false);
@@ -40,7 +40,7 @@ const NavMenu: React.FC<NavMenuProps> = (props) => {
       </div>
 
       <div
-        className="navLink"
+        className="menuItem"
         onClick={() => {
           router.navigate("/blackMarket");
           props.setShowNavMenu(false);
@@ -50,7 +50,7 @@ const NavMenu: React.FC<NavMenuProps> = (props) => {
       </div>
 
       <div
-        className="navLink"
+        className="menuItem"
         onClick={() => {
           router.navigate("/operations");
           props.setShowNavMenu(false);
@@ -60,7 +60,7 @@ const NavMenu: React.FC<NavMenuProps> = (props) => {
       </div>
 
       <div
-        className="navLink"
+        className="menuItem"
         onClick={() => {
           router.navigate("/contact");
           props.setShowNavMenu(false);

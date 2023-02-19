@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { fakeEventData } from "../../@types/fakeEventData";
 import EventCard from "../../components/eventCard/EventCard";
 import { FakeEventData } from "../../@types/fakeData";
+import themes from "../../themes/themes.scss?export";
 import { BallTriangle } from "react-loader-spinner";
 import FilterBar from "../../components/filterBar/FilterBar";
 
@@ -34,7 +35,7 @@ export default function Operations() {
           height={60}
           width={60}
           radius={5}
-          color="#4fa94d"
+          color={themes.primaryGreen}
           ariaLabel="ball-triangle-loading"
           wrapperStyle={{ justifyContent: "center" }}
           visible={true}

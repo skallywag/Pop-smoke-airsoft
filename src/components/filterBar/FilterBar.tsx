@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { router } from "../../router";
 import Button from "../../shared/button/Button";
 import { GoChevronUp, GoChevronDown } from "react-icons/go";
 import "./FilterBar.scss";

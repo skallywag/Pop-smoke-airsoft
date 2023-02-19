@@ -1,7 +1,9 @@
+@import "src/themes/themes";
+
 .avatar {
   .avatarImage {
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid #495053b0;
+    border: 2px solid $primaryGray;
   }
 }

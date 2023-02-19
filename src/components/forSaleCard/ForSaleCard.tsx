@@ -2,6 +2,7 @@ import React from "react";
 import { FakeShopData } from "../../@types/fakeData";
 import { BallTriangle } from "react-loader-spinner";
 import Image from "../image/Image";
+import themes from "../../themes/themes.scss?export";
 import "./ForSaleCard.scss";
 
 interface ForSaleCardProps {
@@ -16,7 +17,7 @@ const ForSaleCard: React.FC<ForSaleCardProps> = (props) => {
           height={60}
           width={60}
           radius={5}
-          color="#4fa94d"
+          color={themes.primaryGreen}
           ariaLabel="ball-triangle-loading"
           wrapperStyle={{ justifyContent: "center" }}
           visible={true}

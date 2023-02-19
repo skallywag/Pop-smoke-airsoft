@@ -2,6 +2,7 @@ import React from "react";
 import "./EventCard.scss";
 import Image from "../image/Image";
 import { FiShare } from "react-icons/fi";
+import themes from "../../themes/themes.scss?export";
 
 interface EventCardProps {
   imageUrl: string;
@@ -35,7 +36,7 @@ const EventCard: React.FC<EventCardProps> = (props) => {
               style={{
                 marginBottom: "5px",
                 fontSize: "16px",
-                color: "#0b6a0b",
+                color: themes.primaryGreen,
               }}
             >
               {props.title}

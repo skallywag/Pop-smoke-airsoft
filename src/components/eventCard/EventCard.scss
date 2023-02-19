@@ -1,6 +1,8 @@
+@import "src/themes/themes";
+
 .eventCard {
   padding: 16px 0;
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid $primaryGreen;
   .eventDetails {
   }
 }

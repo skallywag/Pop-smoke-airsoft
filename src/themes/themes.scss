@@ -1,0 +1,87 @@
+$primaryGray: #444c4f;
+$secondaryGray: #495053b0;
+$darkGray: #081430;
+$primaryGreen: #276e27;
+$white: #f5f5f5;
+
+/* Font Weights */
+$fwThin: 100;
+$fwExtraThin: 200;
+$fwLight: 300;
+$fwRegular: 400;
+$fwMedium: 500;
+$fwSemiBold: 600;
+$fwBold: 700;
+$fwExtraBold: 800;
+$fwBlack: 900;
+$fwExtraBlack: 950;
+
+/* Global's used in calculations (page offsets, etc) */
+$menuExpandedWidth: 250px;
+$menuCollapsedWidth: 50px;
+
+//Neutral
+$neutralWhite: #ffffff;
+$neutralGrey50: #faf9fa;
+$neutralGrey100: #f2f1f3;
+$neutralGrey200: #edecef;
+$neutralGrey300: #e3e1e5;
+$neutralGrey400: #d4d0d7;
+$neutralGrey500: #b5afbb;
+$neutralGrey600: #8f8698;
+$neutralGrey700: #4f4955;
+$neutralGrey800: #3a363f;
+$neutralGrey900: #262329;
+$neutralBlack: #000000;
+
+//Accent
+$accentSuccessLight: #d3fccf;
+$accentSuccess: #20a612;
+$accentSuccessDark: #0a4a03;
+$accentErrorLight: #0a4a03;
+$accentError: #e51a3c;
+$accentErrorDark: #750800;
+$accentWarningLight: #fff5cc;
+$accentWarning: #e6900f;
+$accentWarningDark: #5c4900;
+$accentInfoLight: #cce6ff;
+$accentInfo: #1469b8;
+$accentInfoDark: #002f5c;
+
+// Exports are for use in Javascript
+:export {
+  //Primary
+  primaryGray: theme-var($primaryGray);
+  secondaryGray: theme-var($secondaryGray);
+  darkGray: theme-var($darkGray);
+  white: theme-var($white);
+  primaryGreen: theme-var($primaryGreen);
+
+  //Neutral
+  neutralWhite: theme-var($neutralWhite);
+  neutralGrey50: theme-var($neutralGrey50);
+  neutralGrey100: theme-var($neutralGrey100);
+  neutralGrey200: theme-var($neutralGrey200);
+  neutralGrey300: theme-var($neutralGrey300);
+  neutralGrey400: theme-var($neutralGrey400);
+  neutralGrey500: theme-var($neutralGrey500);
+  neutralGrey600: theme-var($neutralGrey600);
+  neutralGrey700: theme-var($neutralGrey700);
+  neutralGrey800: theme-var($neutralGrey800);
+  neutralGrey900: theme-var($neutralGrey900);
+  neutralBlack: theme-var($neutralBlack);
+
+  //Accent
+  accentSuccessLight: theme-var($accentSuccessLight);
+  accentSuccess: theme-var($accentSuccess);
+  accentSuccessDark: theme-var($accentSuccessDark);
+  accentErrorLight: theme-var($accentErrorLight);
+  accentError: theme-var($accentError);
+  accentErrorDark: theme-var($accentErrorDark);
+  accentWarningLight: theme-var($accentWarningLight);
+  accentWarning: theme-var($accentWarning);
+  accentWarningDark: theme-var($accentWarningDark);
+  accentInfoLight: theme-var($accentInfoLight);
+  accentInfo: theme-var($accentInfo);
+  accentInfoDark: theme-var($accentInfoDark);
+}

@@ -1,7 +1,8 @@
 import { useModals } from "react-modal-controller";
 import { IoCloseOutline } from "react-icons/io5";
-import Image from "../../components/image/Image";
-import smoke from "../../assets/target.png";
+import Image from "../../../components/image/Image";
+import smoke from "../../../assets/target.png";
+import themes from "../../../themes/themes.scss?export";
 import "./LoginModal.scss";
 
 interface SignInModalProps {
@@ -11,11 +12,11 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
   const { closeModal } = useModals();
 
   return (
-    <div className="overlay" onClick={() => closeModal("LOG_IN")}>
+    <div className="overlay">
       <div className="loginModal">
         <IoCloseOutline
-          size={40}
-          color={"white"}
+          size={30}
+          color={themes.white}
           onClick={() => closeModal("LOG_IN")}
           style={{ position: "absolute", top: "8", right: "8" }}
         />
@@ -31,16 +32,16 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
           style={{
             marginBottom: "50px",
             textDecoration: "underline",
-            color: "white",
+            color: themes.white,
             fontSize: "12px",
           }}
         >
           Don't Have an Account?
         </div>
 
-        <div style={{ marginBottom: "6px", color: "white" }}>Email</div>
+        <div style={{ marginBottom: "6px", color: themes.white }}>Email</div>
         <input className="input fullWidth" style={{ marginBottom: "20px" }} />
-        <div style={{ marginBottom: "6px", color: "white" }}>Password</div>
+        <div style={{ marginBottom: "6px", color: themes.white }}>Password</div>
         <input className="input fullWidth" />
       </div>
     </div>
