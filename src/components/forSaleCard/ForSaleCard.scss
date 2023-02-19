@@ -1,7 +1,12 @@
-.forSaleCard {
-  display: flex;
-  flex-direction: column;
-
+.forSaleWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(134px, 1fr));
+  gap: 24px;
+  .forSaleCard {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+  }
   .description {
     margin-bottom: 8px;
   }

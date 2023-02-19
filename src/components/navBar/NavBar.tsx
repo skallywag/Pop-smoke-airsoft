@@ -8,12 +8,14 @@ import NavMenu from "./navMenu/NavMenu";
 import Avatar from "../avatar/Avatar";
 import Button from "../../shared/button/Button";
 import { router } from "../../router";
+import { useModals } from "react-modal-controller";
 
 interface NavBarProps {}
 
 const NavBar: React.FC<NavBarProps> = (props) => {
   const [showNavMenu, setShowNavMenu] = useState<boolean>(false);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const { openModal } = useModals();
 
   return (
     <div className="navWrapper">
@@ -49,7 +51,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             <Button
               key={1}
               variant={"buttonDefault"}
-              onClick={() => router.navigate("/login")}
+              onClick={() => openModal("LOG_IN", { anyProp: "I am Modal" })}
               text={"Login"}
               type={"button"}
             />

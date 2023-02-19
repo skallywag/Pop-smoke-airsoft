@@ -1,24 +1,34 @@
 import ForSaleCard from "../../components/forSaleCard/ForSaleCard";
+import { useState, useEffect } from "react";
 import { fakeShopData } from "../../@types/fakeShopData";
 import "./BlackMarket.scss";
+import { FakeShopData } from "../../@types/fakeData";
+import FilterBar from "../../components/filterBar/FilterBar";
 
 export default function BlackMarket() {
+  const [products, setProducts] = useState<FakeShopData[]>(fakeShopData);
+  const [searchValue, setSearchValue] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    async function getProducts() {
+      try {
+      } catch (error) {}
+    }
+  }, []);
+
   return (
     <div className="page blackMarket">
       <div style={{ fontSize: "30px", marginBottom: "20px" }}>Black Market</div>
-      <div className="forSaleWrapper">
-        {fakeShopData.map((item) => {
-          return (
-            <ForSaleCard
-              id={item.id}
-              imageUrl={item.imageUrl}
-              price={item.price}
-              title={item.title}
-              description={item.description}
-              shareLink={item.shareLink}
-            />
-          );
-        })}
+      <input
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
+        className="input"
+        placeholder="Search Market"
+      />
+      <FilterBar />
+      <div className="productWrapper">
+        <ForSaleCard products={products} />
       </div>
     </div>
   );

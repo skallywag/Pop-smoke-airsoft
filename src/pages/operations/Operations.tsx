@@ -10,7 +10,12 @@ export default function Operations() {
   const [operations, setOperations] = useState<FakeEventData[]>(fakeEventData);
   const [isLoading, setIsloading] = useState<boolean>(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    async function getOperations() {
+      try {
+      } catch (error) {}
+    }
+  }, []);
 
   return (
     <div className="page operations">

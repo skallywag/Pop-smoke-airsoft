@@ -10,3 +10,12 @@ export interface FakeEventData {
   eventType: string;
   duration: number;
 }
+
+export interface FakeShopData {
+  id: number;
+  imageUrl: string;
+  price: string;
+  title: string;
+  description: string;
+  shareLink: string;
+}
