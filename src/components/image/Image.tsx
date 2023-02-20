@@ -5,7 +5,7 @@ interface ImageProps {
   imageUrl?: string;
   height?: string | number;
   width?: string | number;
-  radius: string | number;
+  radius?: string | number;
   marginBottom?: string | number;
 }
 

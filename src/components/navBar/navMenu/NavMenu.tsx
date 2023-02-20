@@ -42,7 +42,7 @@ const NavMenu: React.FC<NavMenuProps> = (props) => {
       <div
         className="menuItem"
         onClick={() => {
-          router.navigate("/blackMarket");
+          router.navigate("/black-market");
           props.setShowNavMenu(false);
         }}
       >

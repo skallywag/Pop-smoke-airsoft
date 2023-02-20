@@ -7,6 +7,7 @@ import Operations from "./pages/operations/Operations";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Sandbox from "./pages/sandbox/Sandbox";
+import ErrorPage from "./pages/errorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ export const router = createBrowserRouter([
     element: <About />,
   },
   {
-    path: "/blackMarket",
+    path: "/black-market",
     element: <BlackMarket />,
   },
   {
@@ -40,5 +41,9 @@ export const router = createBrowserRouter([
   {
     path: "/sandbox",
     element: <Sandbox />,
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);

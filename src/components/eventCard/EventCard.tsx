@@ -36,7 +36,7 @@ const EventCard: React.FC<EventCardProps> = (props) => {
               style={{
                 marginBottom: "5px",
                 fontSize: "16px",
-                color: themes.primaryGreen,
+                color: themes.accentInfoLight,
               }}
             >
               {props.title}

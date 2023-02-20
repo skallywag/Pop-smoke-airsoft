@@ -1,14 +1,18 @@
 import { useModals } from "react-modal-controller";
+import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import Image from "../../../components/image/Image";
 import smoke from "../../../assets/target.png";
-import themes from "../../../themes/themes.scss?export";
 import "./LoginModal.scss";
+import LoginForm from "./LoginForm";
+import SignUpForm from "./SignUpForm";
 
 interface SignInModalProps {
   onClose: () => void;
 }
+
 const SignInModal: React.FC<SignInModalProps> = (props) => {
+  const [showCreate, setShowCreate] = useState<boolean>(false);
   const { closeModal } = useModals();
 
   return (
@@ -16,9 +20,14 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
       <div className="loginModal">
         <IoCloseOutline
           size={30}
-          color={themes.white}
+          color={"white"}
           onClick={() => closeModal("LOG_IN")}
-          style={{ position: "absolute", top: "8", right: "8" }}
+          style={{
+            position: "absolute",
+            top: "8",
+            right: "8",
+            cursor: "pointer",
+          }}
         />
         <Image
           height={"40x"}
@@ -28,21 +37,32 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
           marginBottom={18}
         />
         <div style={{ fontSize: "30px", marginBottom: "20px" }}>LOGIN</div>
-        <div
-          style={{
-            marginBottom: "50px",
-            textDecoration: "underline",
-            color: themes.white,
-            fontSize: "12px",
-          }}
-        >
-          Don't Have an Account?
-        </div>
-
-        <div style={{ marginBottom: "6px", color: themes.white }}>Email</div>
-        <input className="input fullWidth" style={{ marginBottom: "20px" }} />
-        <div style={{ marginBottom: "6px", color: themes.white }}>Password</div>
-        <input className="input fullWidth" />
+        {showCreate ? (
+          <div
+            onClick={() => setShowCreate(!showCreate)}
+            style={{
+              marginBottom: "30px",
+              textDecoration: "underline",
+              color: "white",
+              fontSize: "12px",
+            }}
+          >
+            Have an Account? <mark>Login</mark>
+          </div>
+        ) : (
+          <div
+            onClick={() => setShowCreate(!showCreate)}
+            style={{
+              marginBottom: "30px",
+              textDecoration: "underline",
+              color: "white",
+              fontSize: "12px",
+            }}
+          >
+            Don't Have an Account? <mark>Sign Up</mark>
+          </div>
+        )}
+        {showCreate ? <SignUpForm /> : <LoginForm />}
       </div>
     </div>
   );

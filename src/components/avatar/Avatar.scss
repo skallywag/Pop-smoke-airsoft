@@ -1,6 +1,7 @@
 @import "src/themes/themes";
 
 .avatar {
+  cursor: pointer;
   .avatarImage {
     object-fit: cover;
     border-radius: 50%;
