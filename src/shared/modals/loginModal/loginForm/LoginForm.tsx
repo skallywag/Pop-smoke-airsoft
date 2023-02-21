@@ -1,21 +1,36 @@
-import React from "react";
-import { FieldValue, useForm, useFormState } from "react-hook-form";
-import Button from "../../button/Button";
+import React, { useState } from "react";
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import Button from "../../../button/Button";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { LoginData } from "../../../../@types/api";
 
-interface LoginFormProps {}
+interface LoginFormProps {
+  closeModal: () => void;
+}
 
-type FormData = {
-  email: string;
-  password: string;
-};
 const LoginForm: React.FC<LoginFormProps> = (props) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<LoginData>();
 
-  const onSubmit = (data: FormData) => console.log(data);
+  const onSubmit = async (data: LoginData) => {
+    setIsLoading(true);
+    try {
+      const response = await axios.post(`http://localhost:4000/test`, data);
+      props.closeModal();
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
+      toast("Error Loging In");
+    }
+  };
 
   return (
     <div className="loginForm">
@@ -52,7 +67,7 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
         </div>
         <Button
           variant="buttonLarge fullWidth"
-          text={"LOGIN"}
+          text={!!isLoading ? "Logging In" : "LOGIN"}
           type={"submit"}
         />
       </form>

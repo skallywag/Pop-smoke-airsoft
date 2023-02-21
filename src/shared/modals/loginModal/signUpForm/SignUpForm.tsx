@@ -1,6 +1,6 @@
 import React from "react";
 import { FieldValue, useForm, useFormState } from "react-hook-form";
-import Button from "../../button/Button";
+import Button from "../../../button/Button";
 import { useModals } from "react-modal-controller";
 
 interface SignUpFormProps {}

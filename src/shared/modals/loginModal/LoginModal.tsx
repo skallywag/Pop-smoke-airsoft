@@ -4,8 +4,8 @@ import { IoCloseOutline } from "react-icons/io5";
 import Image from "../../../components/image/Image";
 import smoke from "../../../assets/target.png";
 import "./LoginModal.scss";
-import LoginForm from "./LoginForm";
-import SignUpForm from "./SignUpForm";
+import LoginForm from "./loginForm/LoginForm";
+import SignUpForm from "./signUpForm/SignUpForm";
 
 interface SignInModalProps {
   onClose: () => void;
@@ -42,27 +42,43 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
             onClick={() => setShowCreate(!showCreate)}
             style={{
               marginBottom: "30px",
-              textDecoration: "underline",
               color: "white",
               fontSize: "12px",
             }}
           >
-            Have an Account? <mark>Login</mark>
+            Have an Account?{" "}
+            <mark
+              style={{
+                background: "none",
+                color: "green",
+                textDecoration: "underline",
+              }}
+            >
+              Login
+            </mark>
           </div>
         ) : (
           <div
             onClick={() => setShowCreate(!showCreate)}
             style={{
               marginBottom: "30px",
-              textDecoration: "underline",
               color: "white",
               fontSize: "12px",
             }}
           >
-            Don't Have an Account? <mark>Sign Up</mark>
+            Don't Have an Account?{" "}
+            <mark
+              style={{
+                background: "none",
+                color: "green",
+                textDecoration: "underline",
+              }}
+            >
+              Sign Up
+            </mark>
           </div>
         )}
-        {showCreate ? <SignUpForm /> : <LoginForm />}
+        {showCreate ? <SignUpForm /> : <LoginForm closeModal={closeModal} />}
       </div>
     </div>
   );
