@@ -1,13 +1,13 @@
 {
   "name": "trb",
   "private": true,
-  "main": "./server/index.js",
+  "main": "./server/server.js",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "devStart": "nodemon index.js"
+    "devStart": "nodemon server.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
@@ -15,11 +15,15 @@
     "body-parser": "^1.20.1",
     "bootstrap": "^5.2.3",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "helmet": "^6.0.1",
     "lodash.debounce": "^4.0.8",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.20",
+    "pg": "^8.9.0",
+    "pg-hstore": "^2.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.1",
@@ -29,7 +33,8 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.1",
     "react-toastify": "^9.1.1",
-    "sass": "^1.58.1"
+    "sass": "^1.58.1",
+    "sequelize": "^6.28.2"
   },
   "devDependencies": {
     "@types/node": "^18.14.0",

@@ -12,6 +12,7 @@ interface LoginFormProps {
 
 const LoginForm: React.FC<LoginFormProps> = (props) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [res, setRes] = useState();
 
   const {
     register,
@@ -22,18 +23,30 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
   const onSubmit = async (data: LoginData) => {
     setIsLoading(true);
     try {
-      const response = await axios.post(`http://localhost:4000/test`, data);
+      const response = await axios.get(`http://localhost:8080/api/tutorials`);
       props.closeModal();
-      console.log(response.data);
+      console.log(response);
     } catch (error) {
       console.error(error);
       setIsLoading(false);
       toast("Error Loging In");
     }
   };
-
+  async function handleClick() {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/api/user/operators`
+      );
+      setRes(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
   return (
     <div className="loginForm">
+      <button style={{ background: "white" }} onClick={handleClick}>
+        click
+      </button>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ marginBottom: "6px", color: "white" }}>Email</div>
         <div style={{ marginBottom: "20px" }}>
