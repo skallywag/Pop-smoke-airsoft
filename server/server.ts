@@ -1,5 +1,6 @@
 import express, { Application } from "express";
-import userRoutes from "./routes/userService.routes";
+import userServiceRoutes from "./routes/userService.routes";
+import db from "./models";
 import cors from "cors";
 
 var corsOptions = {
@@ -10,7 +11,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// const db = require("./models/index");
+console.log(db);
+
 // db.sequelize
 //   .sync()
 //   .then(() => {
@@ -20,9 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 //     console.log("Failed to sync db: " + err.message);
 //   });
 
-// require("./routes/userService.routes")(app);
-
-userRoutes(app);
+userServiceRoutes(app);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

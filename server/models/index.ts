@@ -1,29 +1,29 @@
 import dbConfig from "../config/db.config";
-// import userModel from "./user.model";
+import userModel from "./user.model";
 import * as Sequelize from "sequelize";
 
-export const sequelize =
-  (dbConfig.DB,
-  dbConfig.USER,
-  dbConfig.PASSWORD,
+export const sequelize = new Sequelize.Sequelize(
+  (process.env.DB_NAME = "db-name"),
+  (process.env.DB_USER = "db-user"),
+  (process.env.DB_PASSWORD = "db-password"),
   {
-    host: dbConfig.HOST,
-    dialect: dbConfig.dialect,
-
+    port: Number(process.env.DB_PORT) || 54320,
+    host: process.env.DB_HOST || "localhost",
+    dialect: "postgres",
     pool: {
-      max: dbConfig.pool.max,
-      min: dbConfig.pool.min,
-      acquire: dbConfig.pool.acquire,
-      idle: dbConfig.pool.idle,
+      min: 0,
+      max: 5,
+      acquire: 30000,
+      idle: 10000,
     },
-  });
-
+  }
+);
 const db: any = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 // db.user = require("./user.model.ts")(sequelize, Sequelize);
-// db.user = userModel(sequelize, Sequelize);
+db.user = userModel(sequelize, Sequelize);
 
 export default db;
