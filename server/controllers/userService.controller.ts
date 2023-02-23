@@ -1,19 +1,17 @@
-const dbConfig = require("../config/db.config");
-const Sequelize = require("sequelize");
-const db = require("../models/index");
+import db from "../models/index";
 
-module.exports = {
-  userLogin: async (req, res) => {
+export const UserController = {
+  userLogin: async (req: any, res: any) => {
     console.log(req.body);
     try {
       res.send(req.body);
-      // const response = await db.sequelize.query("");
+      const response = await db.sequelize.query("");
     } catch (error) {
       res.send(error);
     }
   },
 
-  getAll: async (req, res) => {
+  getAll: async (req: any, res: any) => {
     try {
       const response = await db.sequelize.query(`SELECT * FROM operators`);
       res.send(response[0][0]);
