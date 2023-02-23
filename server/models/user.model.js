@@ -1,22 +1,38 @@
+const { DataTypes } = require("sequelize");
+
 module.exports = (sequelize, Sequelize) => {
   const User = sequelize.define("operators", {
     firstname: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     lastname: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     email: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     password: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     createdat: {
-      type: Sequelize.DATE,
+      type: DataTypes.DATE,
+      allowNull: false,
     },
     updatedat: {
-      type: Sequelize.DATE,
+      type: DataTypes.DATE,
+      allowNull: true,
     },
   });
 

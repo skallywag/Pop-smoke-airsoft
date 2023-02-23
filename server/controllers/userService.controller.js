@@ -4,8 +4,13 @@ const db = require("../models/index");
 
 module.exports = {
   userLogin: async (req, res) => {
+    console.log(req.body);
     try {
-    } catch (error) {}
+      res.send(req.body);
+      // const response = await db.sequelize.query("");
+    } catch (error) {
+      res.send(error);
+    }
   },
 
   getAll: async (req, res) => {

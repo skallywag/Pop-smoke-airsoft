@@ -23,7 +23,10 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
   const onSubmit = async (data: LoginData) => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`http://localhost:8080/api/tutorials`);
+      const response = await axios.post(
+        `http://localhost:8080/api/user/login`,
+        data
+      );
       props.closeModal();
       console.log(response);
     } catch (error) {
@@ -32,21 +35,9 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
       toast("Error Loging In");
     }
   };
-  async function handleClick() {
-    try {
-      const response = await axios.get(
-        `http://localhost:8080/api/user/operators`
-      );
-      setRes(response);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+
   return (
     <div className="loginForm">
-      <button style={{ background: "white" }} onClick={handleClick}>
-        click
-      </button>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ marginBottom: "6px", color: "white" }}>Email</div>
         <div style={{ marginBottom: "20px" }}>
