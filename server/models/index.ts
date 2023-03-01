@@ -3,12 +3,11 @@ import userModel from "./user.model";
 import * as Sequelize from "sequelize";
 
 export const sequelize = new Sequelize.Sequelize(
-  (process.env.DB_NAME = "db-name"),
-  (process.env.DB_USER = "db-user"),
-  (process.env.DB_PASSWORD = "db-password"),
+  dbConfig.DB,
+  dbConfig.USER,
+  dbConfig.PASSWORD,
   {
-    port: Number(process.env.DB_PORT) || 54320,
-    host: process.env.DB_HOST || "localhost",
+    host: dbConfig.HOST,
     dialect: "postgres",
     pool: {
       min: 0,
@@ -23,7 +22,6 @@ const db: any = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-// db.user = require("./user.model.ts")(sequelize, Sequelize);
 db.user = userModel(sequelize, Sequelize);
 
 export default db;

@@ -78,7 +78,11 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
             </mark>
           </div>
         )}
-        {showCreate ? <SignUpForm /> : <LoginForm closeModal={closeModal} />}
+        {showCreate ? (
+          <SignUpForm closeModal={closeModal} />
+        ) : (
+          <LoginForm closeModal={closeModal} />
+        )}
       </div>
     </div>
   );

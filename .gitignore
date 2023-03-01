@@ -13,6 +13,7 @@ dist-ssr
 *.local
 package-lock.json
 db.config.js
+/server/models/index.ts
 
 # Editor directories and files
 .vscode/*

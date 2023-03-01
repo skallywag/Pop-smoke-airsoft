@@ -1,21 +1,51 @@
 import db from "../models/index";
+import * as bcrypt from "bcrypt";
 
 export const UserController = {
   userLogin: async (req: any, res: any) => {
-    console.log(req.body);
+    const { email, password } = req.body;
     try {
-      res.send(req.body);
-      const response = await db.sequelize.query("");
+      const response = await db.sequelize.query(`
+          SELECT * FROM operators WHERE email = '${email}'
+        `);
+      if (response[1].rowCount === 1) {
+        if (bcrypt.compareSync(password, response[0][0].password)) {
+          const operator = {
+            firstName: response[0][0].firstname,
+          };
+          res.status(200).send(operator);
+        }
+        if (response[1].rowCount !== 1) {
+          res.status(404).send("Account does not exist");
+        } else {
+          res.status(401).send("Email or Password is incorrect");
+        }
+      }
     } catch (error) {
       res.send(error);
     }
   },
 
-  getAll: async (req: any, res: any) => {
+  userCreate: async (req: any, res: any) => {
+    const { firstName, lastName, email, password, userName } = req.body;
     try {
-      const response = await db.sequelize.query(`SELECT * FROM operators`);
-      res.send(response[0][0]);
-      console.log(response);
+      const existingUser = await db.sequelize.query(
+        `SELECT * FROM operators WHERE email = '${email}'`
+      );
+      if (existingUser[1].rowCount !== 0) {
+        res.status(404).send("Account Already Exists");
+      } else {
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(password, salt);
+        const createUser = await db.sequelize
+          .query(`INSERT INTO operators(firstname, lastname, email, password, username)
+          VALUES('${firstName}', '${lastName}', '${email}', '${hash}', '${userName}')
+          RETURNING id, firstname
+        `);
+        console.log(createUser[0][0]);
+
+        res.status(200).send(createUser[0][0]);
+      }
     } catch (error) {
       res.send(error);
     }

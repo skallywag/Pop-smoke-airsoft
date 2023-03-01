@@ -28,11 +28,11 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
         data
       );
       props.closeModal();
-      console.log(response);
+      setRes(response.data);
     } catch (error) {
       console.error(error);
       setIsLoading(false);
-      toast("Error Loging In");
+      toast(error.response.data);
     }
   };
 

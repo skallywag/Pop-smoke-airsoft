@@ -36,8 +36,15 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         )}
 
         <div style={{ display: "flex", gap: "30px", alignItems: "center" }}>
-          <img src={logo} height="30px" width={"30px"} className="logo" />
-          <div style={{ fontSize: "20px", color: themes.white }}>Pop Smoke</div>
+          <div
+            onClick={() => router.navigate("/")}
+            style={{ display: "flex", gap: "20px", alignItems: "center" }}
+          >
+            <img src={logo} height="30px" width={"30px"} className="logo" />
+            <div style={{ fontSize: "20px", color: themes.white }}>
+              Pop Smoke
+            </div>
+          </div>
           <div className="linkContainer">
             <div className="navLink" onClick={() => router.navigate("/about")}>
               About

@@ -5,7 +5,7 @@ const userRoutes = (app: any) => {
   var router = require("express").Router();
 
   router.post("/login", user.userLogin);
-  router.get("/operators", user.getAll);
+  router.post("/create", user.userCreate);
 
   app.use("/api/user", router);
 };

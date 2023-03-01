@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { ModalsProvider } from "react-modal-controller";
 import "react-toastify/dist/ReactToastify.css";
 import modals from "./shared/modals/modals";
+import { Auth0Provider } from "@auth0/auth0-react";
 import "./App.scss";
 
 export default function App() {

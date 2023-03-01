@@ -1,11 +1,7 @@
 const { DataTypes } = require("sequelize");
 
-export interface UserAttributes {
-  id: number;
+export interface UserAttributes {}
 
-  createdAt?: Date;
-  updatedAt?: Date;
-}
 const sequelizer = (sequelize: any, Sequelize: any): any => {
   const User = sequelize.define("operators", {
     firstname: {
