@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { fakeEventData } from "../../@types/fakeEventData";
 import EventCard from "../../components/eventCard/EventCard";
-import { FakeEventData } from "../../@types/fakeData";
 import themes from "../../themes/themes.scss?export";
 import { BallTriangle } from "react-loader-spinner";
 import FilterBar from "../../components/filterBar/FilterBar";
 
-export default function Operations() {
+const OperationsPage: React.FC = () => {
   const [search, setSearch] = useState<string>("");
-  const [operations, setOperations] = useState<FakeEventData[]>(fakeEventData);
+  const [operations, setOperations] =
+    useState<Api.Operations.Req.Event[]>(fakeEventData);
   const [isLoading, setIsloading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -60,4 +60,5 @@ export default function Operations() {
       )}
     </div>
   );
-}
+};
+export default OperationsPage;

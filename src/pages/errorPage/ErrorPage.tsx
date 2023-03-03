@@ -1,7 +1,7 @@
 import "./ErrorPage.scss";
 import Image from "../../components/image/Image";
 
-export default function ErrorPage() {
+const ErrorPage: React.FC = () => {
   return (
     <div className="page errorPage">
       <div style={{ textAlign: "center" }}>
@@ -20,4 +20,6 @@ export default function ErrorPage() {
       </div>
     </div>
   );
-}
+};
+
+export default ErrorPage;

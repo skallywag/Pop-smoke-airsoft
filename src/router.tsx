@@ -1,42 +1,42 @@
 import { createBrowserRouter } from "react-router-dom";
-import BlackMarket from "./pages/blackMarket/BlackMarket";
-import Forums from "./pages/forums/Forums";
-import Home from "./pages/home/Home";
-import Profile from "./pages/profile/Profile";
-import Operations from "./pages/operations/Operations";
-import Contact from "./pages/contact/Contact";
-import About from "./pages/about/About";
 import Sandbox from "./pages/sandbox/Sandbox";
 import ErrorPage from "./pages/errorPage/ErrorPage";
+import ForumsPage from "./pages/forumsPage/ForumsPage";
+import OperationsPage from "./pages/operationsPage/OperationsPage";
+import ContactPage from "./pages/contactPage/ContactPage";
+import ProfilePage from "./pages/profilePage/ProfilePage";
+import BlackMarketPage from "./pages/blackMarketPage/BlackMarketPAge";
+import AboutPage from "./pages/aboutPage/AboutPage";
+import HomePage from "./pages/homePage/HomePAge";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <HomePage />,
   },
   {
     path: "/about",
-    element: <About />,
+    element: <AboutPage />,
   },
   {
     path: "/black-market",
-    element: <BlackMarket />,
+    element: <BlackMarketPage />,
   },
   {
     path: "/forums",
-    element: <Forums />,
+    element: <ForumsPage />,
   },
   {
     path: "/operations",
-    element: <Operations />,
+    element: <OperationsPage />,
   },
   {
     path: "/profile",
-    element: <Profile />,
+    element: <ProfilePage />,
   },
   {
     path: "/contact",
-    element: <Contact />,
+    element: <ContactPage />,
   },
   {
     path: "/sandbox",

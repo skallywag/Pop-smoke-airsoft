@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useForm } from "react-hook-form";
 import Button from "../../../button/Button";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { LoginData } from "../../../../@types/api";
+import { useAppDispatch } from "../../../../state/state.hooks";
+import { setLogin } from "../../../../state/appSlice";
+import { userService } from "../../../../api/userService/userService";
 
 interface LoginFormProps {
   closeModal: () => void;
@@ -12,23 +13,21 @@ interface LoginFormProps {
 
 const LoginForm: React.FC<LoginFormProps> = (props) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [res, setRes] = useState();
+  const dispatch = useAppDispatch();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginData>();
+  } = useForm<Api.User.Req.Login>();
 
-  const onSubmit = async (data: LoginData) => {
+  const onSubmit = async (data: Api.User.Req.Login) => {
     setIsLoading(true);
     try {
-      const response = await axios.post(
-        `http://localhost:8080/api/user/login`,
-        data
-      );
+      await userService.userLogin(data);
+      dispatch(setLogin(true));
       props.closeModal();
-      setRes(response.data);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
       setIsLoading(false);

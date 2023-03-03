@@ -4,18 +4,12 @@ import Button from "../../../button/Button";
 import { useModals } from "react-modal-controller";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { userService } from "../../../../api/userService/userService";
 
 interface SignUpFormProps {
   closeModal: () => void;
 }
-type FormData = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  userName: string;
-  password: string;
-  confirmPassword: string;
-};
+
 const SignUpForm: React.FC<SignUpFormProps> = (props) => {
   const [res, setRes] = useState();
   const {
@@ -24,16 +18,11 @@ const SignUpForm: React.FC<SignUpFormProps> = (props) => {
     watch,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>();
-  const onSubmit = async (data: FormData) => {
+  } = useForm<Api.User.Req.Create>();
+  const onSubmit = async (data: Api.User.Req.Create) => {
     try {
-      const response = await axios.post(
-        `http://localhost:8080/api/user/create`,
-        data
-      );
+      await userService.userCreate(data);
       props.closeModal();
-      setRes(response.data);
-      console.log(response.data);
     } catch (error) {
       console.error(error);
       toast(error.response.data);

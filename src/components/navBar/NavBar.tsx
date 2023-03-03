@@ -5,18 +5,20 @@ import suns from "../../assets/smoke.jpeg";
 import logo from "../../assets/target.png";
 import NavMenu from "./navMenu/NavMenu";
 import Avatar from "../avatar/Avatar";
+import { useAppSelector } from "../../state/state.hooks";
 import Button from "../../shared/button/Button";
 import themes from "../../themes/themes.scss?export";
 import { useModals } from "react-modal-controller";
 import { router } from "../../router";
 import "./NavBar.scss";
+import { RootState } from "../../state/store";
 
 interface NavBarProps {}
 
 const NavBar: React.FC<NavBarProps> = (props) => {
-  const [showNavMenu, setShowNavMenu] = useState<boolean>(false);
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const { openModal } = useModals();
+  const [showNavMenu, setShowNavMenu] = useState<boolean>(false);
+  const { isLoggedIn } = useAppSelector((state: RootState) => state.setLogin);
 
   return (
     <div className="navWrapper">

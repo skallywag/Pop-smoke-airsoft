@@ -2,11 +2,11 @@ import ForSaleCard from "../../components/forSaleCard/ForSaleCard";
 import { useState, useEffect } from "react";
 import { fakeShopData } from "../../@types/fakeShopData";
 import "./BlackMarket.scss";
-import { FakeShopData } from "../../@types/fakeData";
 import FilterBar from "../../components/filterBar/FilterBar";
 
-export default function BlackMarket() {
-  const [products, setProducts] = useState<FakeShopData[]>(fakeShopData);
+const BlackMarketPage: React.FC = () => {
+  const [products, setProducts] =
+    useState<Api.Products.Req.Product[]>(fakeShopData);
   const [searchValue, setSearchValue] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -32,4 +32,5 @@ export default function BlackMarket() {
       </div>
     </div>
   );
-}
+};
+export default BlackMarketPage;

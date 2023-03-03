@@ -1,12 +1,11 @@
 import React from "react";
-import { FakeShopData } from "../../@types/fakeData";
 import { BallTriangle } from "react-loader-spinner";
 import Image from "../image/Image";
 import themes from "../../themes/themes.scss?export";
 import "./ForSaleCard.scss";
 
 interface ForSaleCardProps {
-  products: FakeShopData[];
+  products: Api.Products.Req.Product[];
 }
 
 const ForSaleCard: React.FC<ForSaleCardProps> = (props) => {

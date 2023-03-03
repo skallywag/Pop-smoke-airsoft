@@ -8,14 +8,18 @@ export const UserController = {
       const response = await db.sequelize.query(`
           SELECT * FROM operators WHERE email = '${email}'
         `);
+      if (response[1].rowCount === 0) {
+        res.status(404).send("User not found");
+      }
       if (response[1].rowCount === 1) {
         if (bcrypt.compareSync(password, response[0][0].password)) {
           const operator = {
             firstName: response[0][0].firstname,
+            userName: response[0][0].username,
           };
           res.status(200).send(operator);
         }
-        if (response[1].rowCount !== 1) {
+        if (response[1].rowCount === 0) {
           res.status(404).send("Account does not exist");
         } else {
           res.status(401).send("Email or Password is incorrect");
@@ -42,8 +46,6 @@ export const UserController = {
           VALUES('${firstName}', '${lastName}', '${email}', '${hash}', '${userName}')
           RETURNING id, firstname
         `);
-        console.log(createUser[0][0]);
-
         res.status(200).send(createUser[0][0]);
       }
     } catch (error) {
