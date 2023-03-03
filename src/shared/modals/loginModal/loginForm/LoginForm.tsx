@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAppDispatch } from "../../../../state/state.hooks";
 import { setLogin } from "../../../../state/appSlice";
-import { userService } from "../../../../api/userService/userService";
+import { userService } from "../../../../services/userService/userService";
 
 interface LoginFormProps {
   closeModal: () => void;

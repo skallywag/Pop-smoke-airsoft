@@ -1,7 +1,7 @@
 import ForSaleCard from "../../components/forSaleCard/ForSaleCard";
 import { useState, useEffect } from "react";
 import { fakeShopData } from "../../@types/fakeShopData";
-import "./BlackMarket.scss";
+import "./BlackMarketPage.scss";
 import FilterBar from "../../components/filterBar/FilterBar";
 
 const BlackMarketPage: React.FC = () => {

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { FieldValue, useForm, useFormState } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Button from "../../../button/Button";
-import { useModals } from "react-modal-controller";
-import axios from "axios";
 import { toast } from "react-toastify";
-import { userService } from "../../../../api/userService/userService";
+import { userService } from "../../../../services/userService/userService";
 
 interface SignUpFormProps {
   closeModal: () => void;
